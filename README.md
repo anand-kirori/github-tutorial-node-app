@@ -1,6 +1,6 @@
 # GitHub Tutorial Node App
 Branch - Docker |
-Basic node.js app that prints "Hello! This is our first project in GitHub" | 
+Basic node.js app that prints "Hello! This is our first project in GitHub" |
 Designed to test dockerfile for building docker images
 
 
@@ -9,11 +9,18 @@ Designed to test dockerfile for building docker images
 Build image
 `docker build .`
 
+Tag images
+`docker build -t local/node-app-docker .`
+
 List images
 `docker images`
 
 Running a Docker image
 `docker run -p80:3000 <image-id>`
+`docker run -d -p80:3000 local/node-app-docker`
 
-Tag images
-`docker build -t <> .`
+List all running containers
+`docker ps`
+
+List all containers (running and stopped)
+`docker ps -a`
