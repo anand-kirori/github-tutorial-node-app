@@ -1,4 +1,4 @@
-# GitHub Tutorial Node App
+# GitHub Tutorial Node App Dockerized
 Branch - Docker |
 Basic node.js app that prints "Hello! This is our first project in GitHub" |
 Designed to test dockerfile for building docker images
