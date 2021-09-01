@@ -31,8 +31,11 @@ jobs:
       uses: actions/checkout@v2
 
     # Build the Docker image
-    - name: Setup
-      run: cat ~/docker-token.txt | docker login --username anandkirori --password-stdin
+    - name: Login to Docker hub
+      uses: docker/login-action@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     # Build the Docker image
     - name: Build
