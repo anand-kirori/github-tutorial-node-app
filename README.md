@@ -24,3 +24,6 @@ List all running containers
 
 List all containers (running and stopped)
 `docker ps -a`
+
+Scan Docker Images (you must be logged in to docker hub)
+`docker scan local/node-app-docker`
