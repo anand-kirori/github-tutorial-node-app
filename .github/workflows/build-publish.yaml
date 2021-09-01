@@ -19,10 +19,10 @@ on:
   workflow_dispatch
 
 jobs:
-  build-publish:
-    name: Setup, Build and Publish
+  # This workflow contains a one job called "build"
+  build:
+    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    environment: production
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -32,7 +32,7 @@ jobs:
 
     # Build the Docker image
     - name: Setup
-      run: cat docker-token.txt | docker login --username anandkirori --password-stdin
+      run: cat ~/docker-token.txt | docker login --username anandkirori --password-stdin
 
     # Build the Docker image
     - name: Build
