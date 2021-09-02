@@ -38,13 +38,13 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
 
     # Build the Docker image
-    - name: Build
+    - name: Build Docker Image
       run: |-
         docker build --tag "anandkirori/node-app-docker:latest" .
         echo Docker Build Started
 
     # Push the Docker image to Google Container Registry
-    - name: Publish
+    - name: Publish Docker Image
       run: |-
         docker push "anandkirori/node-app-docker:latest"
         echo Docker Publish Started
