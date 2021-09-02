@@ -41,12 +41,12 @@ jobs:
     - name: Build Docker Image
       run: |-
         docker build --tag "anandkirori/node-app-docker:latest" .
-        docker tag anandkirori/node-app-docker:latest anandkirori/node-app-docker:latest:1.0.${{ github.run_number }}
+        docker tag anandkirori/node-app-docker:latest anandkirori/node-app-docker:1.0.${{ github.run_number }}
         echo Docker Build Completed
 
     # Push the Docker image to Google Container Registry
     - name: Publish Docker Image
       run: |-
         docker push "anandkirori/node-app-docker:latest"
-        docker push "anandkirori/node-app-docker:latest:1.0.${{ github.run_number }}"
+        docker push "anandkirori/node-app-docker:1.0.${{ github.run_number }}"
         echo Docker Publish Completed
